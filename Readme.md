@@ -19,6 +19,7 @@
    Runs the tests in debug mode.
 
 6. npx playwright codegen
+   (npx playwright codegen "https://rahulshettyacademy.com/client")
    Auto generate tests with Codegen.
 
 7. npx playwright show-report

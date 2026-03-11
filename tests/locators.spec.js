@@ -57,10 +57,9 @@ test("UI Controls", async ({ page }) => {
   await expect(
     page.getByRole("Link", { name: "Free Access to InterviewQues/" }),
   ).toHaveClass("blinkingText");
-  await page.pause();
 });
 
-test.only("Child Windows Handle", async ({ browser }) => {
+test("Child Windows Handle", async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
   const documentLink = page.getByRole("link", {
@@ -79,5 +78,4 @@ test.only("Child Windows Handle", async ({ browser }) => {
   console.log(email1);
   await page.getByLabel("Username:").fill(email);
   console.log(await page.getByLabel("Username:").inputValue());
-  await page.pause();
 });

@@ -8,9 +8,9 @@ test("E2E Testing Script", async ({ page }) => {
   const years = page.getByRole("combobox").first();
   const days = page.getByRole("combobox").last();
   await page.goto("https://rahulshettyacademy.com/client");
-  await page.locator("#userEmail").fill("abctest31@gmail.com");
-  await page.locator("#userPassword").fill("Test@1234");
-  await page.locator("#login").click();
+  await page.getByPlaceholder("email@example.com").fill("abctest31@gmail.com");
+  await page.getByPlaceholder("enter your passsword").fill("Test@1234");
+  await page.getByRole("button", { name: "Login" }).click();
   const cards = page.locator(".card-body");
   await cards.first().waitFor();
   await cards
@@ -32,9 +32,7 @@ test("E2E Testing Script", async ({ page }) => {
   await expect(page.locator("input[name='coupon']+p")).toContainText(
     "* Coupon Applied",
   );
-  await page
-    .locator("input[placeholder='Select Country']")
-    .pressSequentially("Ind");
+  await page.getByPlaceholder("Select Country").pressSequentially("Ind");
 
   const dropdown = page.locator(".ta-results button");
   await expect(dropdown.first()).toBeVisible();
@@ -47,18 +45,20 @@ test("E2E Testing Script", async ({ page }) => {
   const text = await page.locator(".em-spacer-1 label").nth(1).textContent();
   const orderId = text.split("|")[1].trim();
   await orderBtn.click();
-  const ordersTable = page.locator("tbody tr");
-  await ordersTable.first().waitFor();
-  const orderIndex = await ordersTable
-    .locator("th")
-    .evaluateAll(
-      (els, orderId) =>
-        els.findIndex((el) => el.textContent.trim() === orderId),
-      orderId,
-    );
-  await ordersTable
-    .nth(orderIndex)
-    .getByRole("button", { name: "View" })
-    .click();
-  await page.pause();
+  const ordersTable = page.locator("tbody tr", { hasText: orderId });
+  await expect(ordersTable).toBeVisible();
+  // await ordersTable.first().waitFor();
+  // const orderIndex = await ordersTable
+  //   .locator("th")
+  //   .evaluateAll(
+  //     (els, orderId) =>
+  //       els.findIndex((el) => el.textContent.trim() === orderId),
+  //     orderId,
+  //   );
+  // await ordersTable
+  //   .nth(orderIndex)
+  //   .getByRole("button", { name: "View" })
+  //   .click();
+
+  await ordersTable.getByRole("button", { name: "View" }).click();
 });
