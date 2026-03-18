@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "1. To install playwright\r    npm init playwright",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test WebAPIPart1.spec.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aman3107/Playwright.git"
@@ -18,5 +20,8 @@
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.3.0"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
   }
 }

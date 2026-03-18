@@ -52,6 +52,12 @@ test.beforeEach("Login Token", async ({ page }) => {
 
 test("Order using API", async ({ page }) => {
   const orderBtn = page.locator("button[routerlink*='myorders']");
+  // To abort any network calls
+  await page.route("**/*.{jpg,png,jpeg}", (route) => route.abort());
+  page.on("request", (request) => console.log(request.url()));
+  page.on("response", (response) =>
+    console.log(response.url(), response.status()),
+  );
   await page.goto("https://rahulshettyacademy.com/client");
   await orderBtn.click();
   const ordersTable = page.locator("tbody tr", { hasText: apiOrderId });

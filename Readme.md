@@ -38,3 +38,6 @@ And check out the following files:
 - .\playwright.config.js - Playwright Test configuration
 
 Visit https://playwright.dev/docs/intro for more information. ✨
+
+9. npm i exceljs
+   To download the excel dependency

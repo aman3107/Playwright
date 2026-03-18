@@ -10,6 +10,7 @@ test("Validations", async ({ page }) => {
   await page.getByRole("button", { name: "Confirm" }).click();
   await page.locator("#mousehover").hover();
 
+  // frames
   const frame = page.frameLocator("#courses-iframe");
   await frame.getByRole("link", { name: "Learning paths" }).click();
   const jsBtn = frame.locator("[data-id='javascript']");
