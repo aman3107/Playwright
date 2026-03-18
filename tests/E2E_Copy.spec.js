@@ -44,7 +44,7 @@ testData.forEach((data, index) => {
   });
 });
 
-customData.only(
+customData(
   `E2E Testing Script using fixtures`,
   async ({ page, testDataOrder }) => {
     const poManager = new POManager(page);

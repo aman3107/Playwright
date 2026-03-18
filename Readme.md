@@ -41,3 +41,9 @@ Visit https://playwright.dev/docs/intro for more information. ✨
 
 9. npm i exceljs
    To download the excel dependency
+
+10. npx playwright test E2E_Copy --config playwright.config1.js
+    To use different playwright config file instead of default config file
+
+11. npx playwright test E2E_Copy --config playwright.config1.js --project=safari
+    If we have different projects in the config file we can use this command

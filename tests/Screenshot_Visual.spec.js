@@ -12,7 +12,7 @@ test("Screenshot and Visual", async ({ page }) => {
   await expect(page.getByPlaceholder("Hide/Show Example")).toBeHidden();
 });
 
-test.only("Visual Testing", async ({ page }) => {
+test("Visual Testing", async ({ page }) => {
   await page.goto("https://www.flightaware.com/");
   expect(await page.screenshot()).toMatchSnapshot("landing.png");
 });
