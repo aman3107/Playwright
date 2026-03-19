@@ -47,3 +47,16 @@ Visit https://playwright.dev/docs/intro for more information. ✨
 
 11. npx playwright test E2E_Copy --config playwright.config1.js --project=safari
     If we have different projects in the config file we can use this command
+
+12. npx playwright test --grep '@Web'
+    To run tests using tags you need to give something like below
+    test("@Web Security Test", async ({ browser }))
+
+13. npm install -D allure-playwright
+    To download allure package
+
+14. allure generate or allure generate --clean
+    To generate the report
+
+15. allure open ./allure-report
+    To open the generated report

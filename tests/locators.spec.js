@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 // parellel  running in a single test file
 test.describe.configure({ mode: "parallel" });
 
-test("Locators Practise", async ({ page }) => {
+test("@Web Locators Practise", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/loginpagePractise/#/");
   await page.getByRole("textbox", { name: "username" }).fill("test");
   await page.getByRole("textbox", { name: "password" }).fill("1234");

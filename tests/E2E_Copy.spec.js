@@ -9,7 +9,7 @@ import { customData } from "../utils/test-base";
 
 import testData from "../utils/placeorderTestData.json" assert { type: "json" };
 testData.forEach((data, index) => {
-  test(`E2E ${data.product} Testing Script`, async ({ page }) => {
+  test(`@Web E2E ${data.product} Testing Script`, async ({ page }) => {
     const poManager = new POManager(page);
     const loginPage = poManager.getLoginpage();
     await loginPage.goto(data.url);

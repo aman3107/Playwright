@@ -26,7 +26,7 @@ test.beforeEach("Login Token", async ({ page }) => {
   }, token);
 });
 
-test("Security Test", async ({ browser }) => {
+test("@Web Security Test", async ({ browser }) => {
   const context = await browser.newContext({ storageState: "state.json" });
   const page = await context.newPage();
   const orderBtn = page.locator("button[routerlink*='myorders']");

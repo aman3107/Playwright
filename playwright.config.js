@@ -6,11 +6,12 @@ import { defineConfig } from "@playwright/test";
  */
 export default defineConfig({
   testDir: "./tests",
+  retries: 2,
   timeout: 20000,
   expect: {
     timeout: 7000,
   },
-  reporter: "html",
+  reporter: [["html"], ["line"], ["allure-playwright"]],
   use: {
     browserName: "chromium",
     headless: false,
