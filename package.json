@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "regression": "npx playwright test",
-    "webTests": "npx playwright test --grep @Web"
+    "webtests": "npx playwright test --grep @Web",
+    "clean": "rimraf allure-results",
+    "test": "npm run clean && playwright test",
+    "report": "allure serve allure-results"
   },
   "repository": {
     "type": "git",
@@ -21,7 +24,8 @@
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.3.0",
-    "allure-playwright": "^3.6.0"
+    "allure-playwright": "^3.6.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "exceljs": "^4.4.0"

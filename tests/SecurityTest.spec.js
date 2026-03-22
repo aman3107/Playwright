@@ -43,5 +43,5 @@ test("@Web Security Test", async ({ browser }) => {
   // const ordersTable = page.locator("tbody tr", { hasText: apiOrderId });
   // await expect(ordersTable).toBeVisible();
   await page.locator("button:has-text('View')").first().click();
-  await page.pause();
+  // await page.pause();
 });

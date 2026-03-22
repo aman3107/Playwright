@@ -63,7 +63,7 @@ test("Order using API", async ({ page }) => {
   const ordersTable = page.locator("tbody tr", { hasText: apiOrderId });
   await expect(ordersTable).toBeVisible();
   await ordersTable.getByRole("button", { name: "View" }).click();
-  await page.pause();
+  // await page.pause();
 });
 
 test("E2E Testing Script", async ({ page }) => {

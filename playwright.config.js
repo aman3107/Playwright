@@ -5,6 +5,7 @@ import { defineConfig } from "@playwright/test";
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  globalSetup: require.resolve("./global-setup"),
   testDir: "./tests",
   retries: 2,
   timeout: 20000,
